@@ -73,6 +73,8 @@ gem 'simple_form'
 
 gem 'kaminari'
 
+gem "font-awesome-rails"
+
 
 
 
