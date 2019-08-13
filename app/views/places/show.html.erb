@@ -12,7 +12,7 @@
   </style>
  
 
-
+<% if @place.latitude.present? && @place.longitude.present? %>
 
   <script>
 
@@ -20,7 +20,7 @@
       var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
+        zoom: 4,
         center: myLatLng
       });
 
@@ -37,7 +37,7 @@
   </script>
 
   <div id="map"></div>
-
+<% end %>
 <div class="float-right">
   <% if current_user && current_user == @place.user %>
   <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
