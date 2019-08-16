@@ -96,13 +96,15 @@
 
 
 <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-  <%= f.input :picture %>
+  <%= f.input :picture, as: :file %>
+  <%= f.input :caption %>
   <%= f.submit "Add a Picture", class: 'btn btn-primary' %>
 <% end %>
 
 
 <% @place.photos.each do |photo| %>
-<%= image_tag 'photo', class: 'img-fluid' %>
+<%= image_tag photo.picture.url , class: 'img-fluid' %>
+<%= photo.caption %>
 <% end %>
 
 
